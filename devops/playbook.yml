@@ -18,13 +18,13 @@
       apt: 
         name: docker.io
         state: latest
-        notify: start the docker
+      notify: start the docker
 
     - name: install nginx
       apt: 
         name: nginx
         state: latest
-        notify: start the nginx
+      notify: start the nginx
 
     - name: login to the Docker Hub with dockerhub_token
       docker_login:
