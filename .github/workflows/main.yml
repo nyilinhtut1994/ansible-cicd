@@ -41,11 +41,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.1.6
       
-      - name: create SSH key 
+      - name: Create SSH key
         run: |
           echo "$SSH_PRIVATE_KEY" > private.key
           sudo chmod 400 private.key
-          eval 'ssh-agent -s'
+          eval `ssh-agent -s`
           ssh-add private.key
           mkdir -p ~/.ssh
           touch ~/.ssh/known_hosts
